@@ -36,6 +36,7 @@ namespace OrderService
         private IQueryable<Product> BaseQuery()
         {
             return _ctx.Products
+            .AsNoTracking()
             .Include(x => x.Category);
         }
     }
